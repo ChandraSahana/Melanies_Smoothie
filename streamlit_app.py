@@ -30,7 +30,7 @@ fruit_list = st.multiselect(
 if fruit_list:
     #st.write(fruit_list)
     #st.text(fruit_list)
-    #fruit_string = ''
+    fruit_string = ''
     for x in fruit_list:
         fruit_string += x + ' '
         search_on=pd_df.loc[pd_df['FRUIT_NAME'] == x, 'SEARCH_ON'].iloc[0]
