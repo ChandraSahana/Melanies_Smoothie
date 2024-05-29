@@ -27,7 +27,8 @@ if fruit_list:
     fruit_string = ''
     for x in fruit_list:
         fruit_string += x + ' '
-        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+        st.subheader(x + 'Nurtition Information')
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + x)
         fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients,NAME_ON_ORDER,ORDER_FILLED)
             values ('""" + fruit_string + """', '""" + name + """','""" + 'False' + """')"""
